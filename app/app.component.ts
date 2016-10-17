@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   selector: 'my-app',
   template: `
   <div class='container'>
-    <h1>My First Angular 2 App</h1>
+    <h1>Super Cool Bar Kegs!</h1>
     <div class='row'>
       <div class='col-xs-6'>
         <h3>Our Kegs</h3>
@@ -13,6 +13,9 @@ import { Keg } from './keg.model';
             [childKegList]="masterKegList"
             (selectKegClickSender)="showKegs($event)"
           ></keg-list>
+        <keg-add
+            (newKegSender)="addKeg($event)"
+          ></keg-add>
       </div>
       <div class='col-xs-6'>
         <keg-info
@@ -47,7 +50,9 @@ export class AppComponent {
     }
   } //End Pour Pint
 
-
+  addKeg(newKegToAdd: Keg) {
+    this.masterKegList.push(newKegToAdd);
+  }
 
 
 }
