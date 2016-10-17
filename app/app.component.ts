@@ -8,8 +8,10 @@ import { Keg } from './keg.model';
     <h1>My First Angular 2 App</h1>
     <div class='row'>
       <div class='col-xs-6'>
+        <h3>Our Kegs</h3>
         <keg-list
             [childKegList]="masterKegList"
+            (selectKegClickSender)="showKegs($event)"
           ></keg-list>
       </div>
       <div class='col-xs-6'>
@@ -30,7 +32,13 @@ export class AppComponent {
     new Keg('Passion Fruit Sour', 'Breakside', 6.00, 5.2),
     new Keg('Kriek', 'Cascade Barrelhouse', 4.50, 6.4)
   ];
-  selectedKeg: Keg = this.masterKegList[0];
+
+  selectedKeg: Keg = null;
+  showKegs(clickedKeg: Keg) {
+    this.selectedKeg = clickedKeg;
+  }
+
+
   pourPint() {
     if (this.selectedKeg.pintsRemaining > 0) {
       this.selectedKeg.pintsRemaining--;
@@ -38,6 +46,7 @@ export class AppComponent {
       alert("Out of Beer, Tap New Keg");
     }
   } //End Pour Pint
+
 
 
 
