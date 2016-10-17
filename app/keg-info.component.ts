@@ -13,6 +13,10 @@ import { Keg } from './keg.model';
       </ul>
       <br>
       <button (click)="pourButtonClicked()">Pour</button>
+      <button (click)="editButtonClicked()">Edit</button>
+      <keg-edit
+          [editKeg]="editKeg"
+        ></keg-edit>
     </div>
   `
 })
@@ -20,7 +24,16 @@ import { Keg } from './keg.model';
 export class KegInfoComponent {
   @Input() selectedKeg: Keg;
   @Output() pourClickedSender = new EventEmitter();
+  editKeg: Keg = null;
   pourButtonClicked() {
     this.pourClickedSender.emit();
+  }
+  editButtonClicked() {
+    if (this.editKeg === null) {
+      this.editKeg = this.selectedKeg;
+    } else {
+      this.editKeg = null;
+    }
+
   }
 }
