@@ -8,7 +8,6 @@ import { Keg } from './keg.model';
     <h1>Super Cool Bar Kegs!</h1>
     <div class='row'>
       <div class='col-xs-6'>
-        <h3>Our Kegs</h3>
         <keg-list
             [childKegList]="masterKegList"
             (selectKegClickSender)="showKegs($event)"
