@@ -6,7 +6,9 @@ import { KegAddComponent } from './keg-add.component';
 import { KegEditComponent } from './keg-edit.component';
 import { KegInfoComponent } from './keg-info.component';
 import { KegListComponent } from './keg-list.component';
+import { KegTapsComponent } from './keg-taps.component';
 import { DisplayOptionPipe } from './display-option.pipe';
+import { DisplayTapPipe } from './display-tap.pipe';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { DisplayOptionPipe } from './display-option.pipe';
     KegEditComponent,
     KegInfoComponent,
     KegListComponent,
-    DisplayOptionPipe
+    KegTapsComponent,
+    DisplayOptionPipe,
+    DisplayTapPipe
   ],
   bootstrap:    [ AppComponent ]
 })

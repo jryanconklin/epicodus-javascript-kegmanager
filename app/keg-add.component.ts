@@ -28,7 +28,7 @@ import { Keg } from './keg.model';
 export class KegAddComponent {
   @Output() newKegSender = new EventEmitter();
   addClicked(name: string, brand: string, price: number, ABV: number, IBU: number) {
-    var newKegToAdd: Keg = new Keg(name, brand, price, ABV, IBU);
+    var newKegToAdd: Keg = new Keg(name, brand, price, ABV, IBU, null);
     if (name == "" || brand == "" || price == null || ABV == null) {
       alert('Please fill in all form elements. How about we just start over?')
     } else {

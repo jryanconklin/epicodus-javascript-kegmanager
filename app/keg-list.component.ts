@@ -15,7 +15,9 @@ import { Keg } from './keg.model';
       </small>
     </h3>
     <div *ngFor="let keg of childKegList | display_option:filter">
-      <p (click)="selectKeg(keg)" [ngClass]="{'cheap': keg.price <= 5, 'expensive': keg.price > 5}">{{ keg.brand }} - {{ keg.name }}</p>
+      <p (click)="selectKeg(keg)" [ngClass]="{'cheap': keg.price <= 5, 'expensive': keg.price > 5}">{{ keg.brand }} - {{ keg.name }}
+        <span class='pull-right'>{{ keg.status }}</span>
+      </p>
     </div>
   `
 })
