@@ -13,7 +13,7 @@ import { Keg } from './keg.model';
         <li>Pints Remaining: {{ selectedKeg.pintsRemaining }}</li>
       </ul>
       <br>
-      <button *ngIf="selectedKeg.status === 'untapped'" (click)="tapButtonClicked()">Tap Keg </button>
+      <button *ngIf="selectedKeg.status === 'tapped'" (click)="tapButtonClicked()">Swap Keg</button>
 
       <button *ngIf="selectedKeg.status === 'tapped'"  (click)="pourButtonClicked()">Pour</button>
 

@@ -26,6 +26,10 @@ import { Keg } from './keg.model';
             [selectedKeg]="selectedKeg"
             (pourClickedSender)="pourPint()"
           ></keg-info>
+        <keg-swap
+            [parentKegData]="[masterKegList, selectedKeg]"
+            (kegSwapClickedSender)="swapKeg($event)"
+          ></keg-swap>
       </div>
     </div>
   </div>
@@ -64,5 +68,11 @@ export class AppComponent {
     this.masterKegList.push(newKegToAdd);
   }
 
-
+  swapKeg(newKeg: Keg) {
+    newKeg.tap = this.selectedKeg.tap;
+    newKeg.status = "tapped";
+    this.selectedKeg.tap = null;
+    this.selectedKeg.status = "empty";
+    this.selectedKeg = newKeg;
+  }
 }

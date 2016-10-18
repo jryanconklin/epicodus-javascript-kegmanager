@@ -7,6 +7,7 @@ import { KegEditComponent } from './keg-edit.component';
 import { KegInfoComponent } from './keg-info.component';
 import { KegListComponent } from './keg-list.component';
 import { KegTapsComponent } from './keg-taps.component';
+import { KegSwapComponent } from './keg-swap.component';
 import { DisplayOptionPipe } from './display-option.pipe';
 import { DisplayTapPipe } from './display-tap.pipe';
 
@@ -22,6 +23,7 @@ import { DisplayTapPipe } from './display-tap.pipe';
     KegInfoComponent,
     KegListComponent,
     KegTapsComponent,
+    KegSwapComponent,
     DisplayOptionPipe,
     DisplayTapPipe
   ],

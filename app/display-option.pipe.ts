@@ -18,7 +18,7 @@ export class DisplayOptionPipe implements PipeTransform {
       return output;
     } else if (info === "empty") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].pintsRemaining <= 0) {
+        if (input[i].status === 'empty') {
           output.push(input[i]);
         }
       }
