@@ -1,3 +1,11 @@
 h1 {
   color: blue;
 }
+
+.expensive {
+  background-color: #eeaaa2;
+}
+
+.cheap {
+  background-color: #cff1dc;
+}

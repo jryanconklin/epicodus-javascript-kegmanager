@@ -14,7 +14,7 @@ import { PintsRemainingPipe } from './pints-remaining.pipe';
       </small>
     </h3>
     <div *ngFor="let keg of childKegList | pints_remaining:filter">
-      <p (click)="selectKeg(keg)" >{{ keg.brand }} - {{ keg.name }}</p>
+      <p (click)="selectKeg(keg)" [ngClass]="{'cheap': keg.price <= 5, 'expensive': keg.price > 5}">{{ keg.brand }} - {{ keg.name }}</p>
     </div>
   `
 })
