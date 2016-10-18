@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, Pipe } from '@angular/core';
 import { Keg } from './keg.model';
-import { PintsRemainingPipe } from './pints-remaining.pipe';
 
 @Component({
   selector: 'keg-list',
@@ -9,11 +8,13 @@ import { PintsRemainingPipe } from './pints-remaining.pipe';
       <small>
         <select (change)="filterList($event.target.value)" class='pull-right'>
           <option value='allKegs'>Show All</option>
+          <option value='untapped'>Show Untapped</option>
+          <option value='empty'>Show Empty Kegs</option>
           <option value='lowKegs'>Show Low</option>
         </select>
       </small>
     </h3>
-    <div *ngFor="let keg of childKegList | pints_remaining:filter">
+    <div *ngFor="let keg of childKegList | display_option:filter">
       <p (click)="selectKeg(keg)" [ngClass]="{'cheap': keg.price <= 5, 'expensive': keg.price > 5}">{{ keg.brand }} - {{ keg.name }}</p>
     </div>
   `

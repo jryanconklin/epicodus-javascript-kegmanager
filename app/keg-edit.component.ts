@@ -10,6 +10,7 @@ import { Keg } from './keg.model';
         <input class='form-control' type='text' [(ngModel)]="editKeg.brand">
         <input class='form-control' type='number' [(ngModel)]="editKeg.price">
         <input class='form-control' type='number' [(ngModel)]="editKeg.abv">
+        <input class='form-control' type='number' [(ngModel)]="editKeg.ibu">
         <input class='form-control' type='number' [(ngModel)]="editKeg.pintsRemaining">
       </div>
     </div>

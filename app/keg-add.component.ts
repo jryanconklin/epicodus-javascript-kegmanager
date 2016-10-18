@@ -10,6 +10,7 @@ import { Keg } from './keg.model';
       <input class='form-control' #newBrand placeholder="new beer brand">
       <input class='form-control' type='number' #newPrice placeholder="new beer price">
       <input class='form-control' type='number' #newABV placeholder="new beer ABV">
+      <input class='form-control' type='number' #newIBU placeholder="new beer IBU">
     </div>
     <div>
       <button (click)=
@@ -18,6 +19,7 @@ import { Keg } from './keg.model';
         newBrand.value ='';
         newPrice.value ='';
         newABV.value ='';
+        newIBU.value ='';
         ">Add</button>
     </div>
   `
@@ -25,8 +27,8 @@ import { Keg } from './keg.model';
 
 export class KegAddComponent {
   @Output() newKegSender = new EventEmitter();
-  addClicked(name: string, brand: string, price: number, ABV: number) {
-    var newKegToAdd: Keg = new Keg(name, brand, price, ABV);
+  addClicked(name: string, brand: string, price: number, ABV: number, IBU: number) {
+    var newKegToAdd: Keg = new Keg(name, brand, price, ABV, IBU);
     if (name == "" || brand == "" || price == null || ABV == null) {
       alert('Please fill in all form elements. How about we just start over?')
     } else {

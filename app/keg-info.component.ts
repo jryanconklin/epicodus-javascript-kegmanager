@@ -9,13 +9,15 @@ import { Keg } from './keg.model';
       <ul>
         <li>Price: {{ selectedKeg.price }}</li>
         <li>ABV: {{ selectedKeg.abv }}</li>
+        <li>IBU: {{ selectedKeg.ibu }}</li>
         <li>Pints Remaining: {{ selectedKeg.pintsRemaining }}</li>
       </ul>
       <br>
+      <button (click)="tapButtonClicked()">Tap Keg</button>
       <button (click)="pourButtonClicked()">Pour</button>
       <button (click)="editButtonClicked()">Edit</button>
-      <keg-edit
-          [editKeg]="editKeg"
+      <keg-edit [ngClass]="{'hidden': !editKeg}"
+          [editKeg]="selectedKeg"
         ></keg-edit>
     </div>
   `
@@ -24,16 +26,14 @@ import { Keg } from './keg.model';
 export class KegInfoComponent {
   @Input() selectedKeg: Keg;
   @Output() pourClickedSender = new EventEmitter();
-  editKeg: Keg = null;
+  editKeg: boolean = false;
   pourButtonClicked() {
     this.pourClickedSender.emit();
   }
   editButtonClicked() {
-    if (this.editKeg === null) {
-      this.editKeg = this.selectedKeg;
-    } else {
-      this.editKeg = null;
-    }
-
+    this.editKeg = !this.editKeg;
+  }
+  tapButtonClicked() {
+    this.selectedKeg.status = "tapped";
   }
 }

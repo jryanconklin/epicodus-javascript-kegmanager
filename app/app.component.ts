@@ -29,10 +29,10 @@ import { Keg } from './keg.model';
 
 export class AppComponent {
   public masterKegList: Keg[] = [
-    new Keg('Vortex IPA', 'Fort George', 5.50, 7.7),
-    new Keg('Total Domination IPA', 'Ninkasi', 5.00, 6.8),
-    new Keg('Passion Fruit Sour', 'Breakside', 6.00, 5.2),
-    new Keg('Kriek', 'Cascade Barrelhouse', 4.50, 6.4)
+    new Keg('Vortex IPA', 'Fort George', 5.50, 7.7, 90),
+    new Keg('Total Domination IPA', 'Ninkasi', 5.00, 6.8, 65),
+    new Keg('Passion Fruit Sour', 'Breakside', 6.00, 5.2, 0),
+    new Keg('Kriek', 'Cascade Barrelhouse', 4.50, 6.4, 0)
   ];
 
   selectedKeg: Keg = null;
